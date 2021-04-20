@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">IWIMHub</string>
+    <string-array name="users_type">
+        <item>student</item>
+        <item>professor</item>
+    </string-array>
+</resources>
