@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -52,7 +53,7 @@ public class DialogProf extends DialogFragment {
 
     }
 
-    @Nonnull
+   /* @Nonnull
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState){
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
@@ -67,25 +68,29 @@ public class DialogProf extends DialogFragment {
         });
 
         return builder.create();
-    }
+    }*/
 
-  /*  @Override
+   @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_dialog, container, false);
-        View tv = v.findViewById(R.id.text);
-        ((TextView)tv).setText("Dialog #" + mNum + ": using style "
-                + getNameForNum(mNum));
+        View v = inflater.inflate(R.layout.professeur_item_detail_layout, container, false);
+        TextView tv_nom = v.findViewById(R.id.nomprof1);
+        TextView tv_prenom = v.findViewById(R.id.prenomprof1);
+        TextView tv_departement = v.findViewById(R.id.departementprof1);
 
-        // Watch for button clicks.
-        Button button = (Button)v.findViewById(R.id.show);
-        button.setOnClickListener(new OnClickListener() {
-            public void onClick(View v) {
-                // When button is clicked, call up to owning activity.
-                ((FragmentDialog)getActivity()).showDialog();
-            }
-        });
+       Button btEnvoyer = v.findViewById(R.id.profmsg);
+
+       tv_nom.setText(nom);
+       tv_prenom.setText(prenom);
+       tv_departement.setText(departement);
+
+       btEnvoyer.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+
+           }
+       });
 
         return v;
-    }*/
+    }
 }

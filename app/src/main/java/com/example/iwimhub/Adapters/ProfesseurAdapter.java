@@ -78,7 +78,7 @@ public class ProfesseurAdapter  extends RecyclerView.Adapter<ProfesseurAdapter.M
     public void onClick(View v) {
         FragmentActivity activity = (FragmentActivity)(context);
         FragmentManager fm = activity.getSupportFragmentManager();
-        DialogProf f= DialogProf.newInstance("détails ", "détails du professeur", "envoyer ");
+        DialogProf f= DialogProf.newInstance(nomProfesseur.getText().toString(), prenomProfesseur.getText().toString(), departement.getText().toString());
         f.show(fm, null);
     }
 }
