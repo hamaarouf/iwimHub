@@ -105,7 +105,7 @@ public class Register extends AppCompatActivity {
 
     private void registerUser(final String userType, final String fullname, final String email, String password) {
 
-        pd.setMessage("Please Wail!");
+        pd.setMessage("Please Wait!");
         pd.show();
 
         fAuth.createUserWithEmailAndPassword(email , password).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
@@ -127,9 +127,7 @@ public class Register extends AppCompatActivity {
                                     "for better experience", Toast.LENGTH_SHORT).show();
                             if (userType.equals("student"))
                             {
-                                Intent intent = new Intent(Register.this, MainActivity.class);
-                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                                startActivity(intent);
+                                startActivity(new Intent(getApplicationContext(),activity_etudiant_list.class));
                                 finish();
                             }
                             else{
