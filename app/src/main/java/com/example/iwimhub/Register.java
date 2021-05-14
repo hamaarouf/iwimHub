@@ -133,7 +133,7 @@ public class Register extends AppCompatActivity {
                                 finish();
                             }
                             else{
-                                Intent intent = new Intent(Register.this, MainActivity.class);
+                                Intent intent = new Intent(Register.this, ProfProfile.class);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                 startActivity(intent);
                                 finish();

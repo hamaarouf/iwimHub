@@ -49,6 +49,8 @@ public class ProfesseurAdapter  extends RecyclerView.Adapter<ProfesseurAdapter.M
         holder.nomProfesseur.setText(professeurs.get(position).getNom());
         holder.prenomProfesseur.setText(professeurs.get(position).getPrenom());
         holder.departement.setText(professeurs.get(position).getDepartement());
+        //holder.photo.setImageResource(professeurs.get(position).getImage());
+
     }
 
     @Override

@@ -36,12 +36,12 @@ public class professeurList extends AppCompatActivity {
 
 
         //fill data in the collection
-        CollectionReference profs = db.collection("professeurs");
+       /* CollectionReference profs = db.collection("professeurs");
         List<Task<Void>> futures = new ArrayList<>();
-        futures.add(profs.document("PR1").set(new Professeur("hakima","maarouf","IWIM")));
+        futures.add(profs.document("PR1").set(new Professeur("hakima","maarouf","IWIM", R.drawable.t1));
         futures.add(profs.document("PR2").set(new Professeur("asmae","lahlou","IWIM")));
         futures.add(profs.document("PR3").set(new Professeur("ahmed","alaoui","BI")));
-        futures.add(profs.document("PR4").set(new Professeur("Said","alami","SSI")));
+        futures.add(profs.document("PR4").set(new Professeur("Said","alami","SSI")));*/
 
 
         //read data from the collection

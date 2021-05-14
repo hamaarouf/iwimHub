@@ -7,7 +7,7 @@ public class Professeur {
     private String nom;
     private String prenom;
     private String departement;
-    private ImageView image;
+    private String imageurl;
 
     public Professeur() {
     }
@@ -16,7 +16,7 @@ public class Professeur {
         this.nom = nom;
         this.prenom = prenom;
         this.departement = departement;
-       // this.image = image;
+        //this.imageurl = imageurl;
     }
 
     public String getNom() {
@@ -43,11 +43,11 @@ public class Professeur {
         this.departement = departement;
     }
 
-    public ImageView getImage() {
-        return image;
+    public String getImage() {
+        return imageurl;
     }
 
-    public void setImage(ImageView image) {
-        this.image = image;
+    public void setImage(String  image) {
+        this.imageurl = imageurl;
     }
 }
