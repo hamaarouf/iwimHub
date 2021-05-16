@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity_etudiant_details">
+
+
+
+    <EditText
+        android:id="@+id/nometud"
+        android:layout_width="432dp"
+        android:layout_height="69dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        android:textColor="#050404" />
+
+    <EditText
+        android:id="@+id/prenometud"
+        android:layout_width="421dp"
+        android:layout_height="65dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        android:textColor="#100B0B"
+        android:textColorHint="#F6F5F5" />
+
+    <EditText
+        android:id="@+id/filiereetud"
+        android:layout_width="match_parent"
+        android:layout_height="73dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        android:textColor="#0C0909" />
+
+    <EditText
+        android:id="@+id/anneeetud"
+        android:layout_width="match_parent"
+        android:layout_height="73dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        android:textColor="#0C0909" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="16dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_weight="1"
+            android:text="Button"
+            android:textColor="#F6F4F4"
+            app:backgroundTint="#E91E63" />
+
+        <Button
+            android:id="@+id/buttonback"
+            android:layout_width="16dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_weight="1"
+            android:text="Back"
+            app:backgroundTint="#E91E63" />
+    </LinearLayout>
+</LinearLayout>

@@ -4,19 +4,30 @@ import android.widget.ImageView;
 
 public class Professeur {
 
+    private String id;
     private String nom;
     private String prenom;
     private String departement;
     private String imageurl;
+    private String idProf;
 
     public Professeur() {
     }
 
-    public Professeur(String nom, String prenom, String departement) {
+    public Professeur(String nom, String prenom, String departement, String idProf) {
         this.nom = nom;
         this.prenom = prenom;
         this.departement = departement;
+        this.idProf = idProf;
         //this.imageurl = imageurl;
+    }
+
+    public void setIdProf(String idProf) {
+        this.idProf = idProf;
+    }
+
+    public String getIdProf() {
+        return idProf;
     }
 
     public String getNom() {

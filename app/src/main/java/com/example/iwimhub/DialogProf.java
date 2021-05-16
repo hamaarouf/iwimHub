@@ -3,6 +3,7 @@ package com.example.iwimhub;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,19 +21,22 @@ public class DialogProf extends DialogFragment {
     private static final String arg_nom = "nom";
     private static final String arg_prenom = "prenom";
     private static final String arg_departement = "departement";
+    private static final String arg_id = "id";
 
 
     private String nom;
     private String prenom;
     private String departement;
+    private String id;
 
     int mNum;
 
-    public static DialogProf newInstance(String nom, String prenom, String departement) {
+    public static DialogProf newInstance(String nom, String prenom, String departement, String id) {
         Bundle args = new Bundle();
         args.putString(arg_nom, nom);
         args.putString(arg_prenom, prenom);
         args.putString(arg_departement, departement);
+        args.putString(arg_id, id);
 
         DialogProf f = new DialogProf();
 
@@ -49,26 +53,9 @@ public class DialogProf extends DialogFragment {
             nom = args.getString(arg_nom);
             prenom = args.getString(arg_prenom);
             departement = args.getString(arg_departement);
+            id = args.getString(arg_id);
         }
-
     }
-
-   /* @Nonnull
-    @Override
-    public Dialog onCreateDialog(@Nullable Bundle savedInstanceState){
-        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setTitle(prenom);
-        builder.setTitle(nom);
-        builder.setMessage(departement);
-        builder.setPositiveButton("envoyer message", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                Toast.makeText(getActivity(), "envoyé", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        return builder.create();
-    }*/
 
    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -87,7 +74,11 @@ public class DialogProf extends DialogFragment {
        btEnvoyer.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
-
+               Intent intent = new Intent(getActivity(), MessageSend.class);
+               intent.putExtra("idTo", id);
+               intent.putExtra("nomTo", nom);
+               intent.putExtra("prenomTo", prenom);
+               startActivity(intent);
            }
        });
 

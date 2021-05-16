@@ -5,21 +5,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
-    tools:context=".ProfProfile">
+    tools:context=".MessageSend">
 
 
     <EditText
         android:id="@+id/messagetoprof"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="382dp"
+        android:layout_height="139dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="324dp"
+        android:layout_marginBottom="216dp"
         android:alpha="0.6"
         android:background="#778899"
         android:ems="10"
         android:fontFamily="sans-serif-black"
-        android:hint="Nom"
+        android:hint="message.."
         android:inputType="text"
         android:padding="10dp"
         android:textColor="@color/white"
@@ -27,53 +27,8 @@
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.666"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <EditText
-        android:id="@+id/prenomProfileProf"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:alpha="0.6"
-        android:background="#778899"
-        android:ems="10"
-        android:fontFamily="sans-serif-black"
-        android:hint="Prénom"
-        android:inputType="text"
-        android:padding="10dp"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/messagetoprof" />
-
-    <EditText
-        android:id="@+id/departementProfileProf"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="16dp"
-        android:alpha="0.6"
-        android:background="#778899"
-        android:ems="10"
-        android:fontFamily="sans-serif-black"
-        android:hint="Département"
-        android:inputType="text"
-        android:padding="10dp"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/prenomProfileProf" />
-
 
     <Button
         android:id="@+id/msgsend"
@@ -84,7 +39,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:fontFamily="sans-serif-black"
-        android:text="Create profile"
+        android:text="send"
         android:textColor="@color/white"
         android:textSize="13sp"
         app:backgroundTint="#F0264F"
@@ -136,14 +91,13 @@
 
     <ImageView
         android:id="@+id/imageProfileProf"
-        android:layout_width="114dp"
-        android:layout_height="122dp"
+        android:layout_width="163dp"
+        android:layout_height="156dp"
         app:layout_constraintBottom_toTopOf="@+id/messagetoprof"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:srcCompat="@drawable/teacher"
-        />
+        app:srcCompat="@drawable/msg" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

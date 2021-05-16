@@ -11,9 +11,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.IWIMHub">
-        <activity android:name=".ProfProfile"
+        <activity android:name=".MessageSend"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             ></activity>
+        <activity android:name=".MessageList"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            />
+        <activity
+            android:name=".ProfProfile"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".activity_etudiant_details" />
+        <activity android:name=".activity_etudiant_list" />
         <activity
             android:name=".professeurList"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />

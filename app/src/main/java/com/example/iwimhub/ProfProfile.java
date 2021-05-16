@@ -13,14 +13,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.iwimhub.Models.Professeur;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -34,9 +33,6 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.UUID;
-
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 
 public class ProfProfile extends AppCompatActivity {
     private final int PICK_IMAGE_REQUEST = 22;
@@ -59,11 +55,11 @@ public class ProfProfile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_prof_profile);
 
-        nom = findViewById(R.id.nomProfileProf);
+        nom = findViewById(R.id.messagetoprof);
         prenom = findViewById(R.id.prenomProfileProf);
         departement = findViewById(R.id.departementProfileProf);
         photoProfile = findViewById(R.id.imageProfileProf);
-        save = findViewById(R.id.profileProfBtn);
+        save = findViewById(R.id.msgsend);
 
         save.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,7 +69,7 @@ public class ProfProfile extends AppCompatActivity {
 
                 CollectionReference profs = db.collection("professeurs");
                 List<Task<Void>> futures = new ArrayList<>();
-                futures.add(profs.document().set(new Professeur(nom.getText().toString(),prenom.getText().toString(),departement.getText().toString())));
+                futures.add(profs.document().set(new Professeur(nom.getText().toString(),prenom.getText().toString(),departement.getText().toString(), FirebaseAuth.getInstance().getCurrentUser().getUid())));
                 uploadImage();
             }
         });

@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.iwimhub.DialogProf;
 import com.example.iwimhub.Models.Professeur;
 import com.example.iwimhub.R;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
@@ -25,6 +26,7 @@ public class ProfesseurAdapter  extends RecyclerView.Adapter<ProfesseurAdapter.M
 
     private LinkedList<Professeur> professeurs;
     private static Context context;
+    private static String idProfesseur;
 
     // Provide a suitable constructor (depends on the kind of dataset)
     public ProfesseurAdapter(LinkedList<Professeur> professeurs, Context context) {
@@ -46,11 +48,10 @@ public class ProfesseurAdapter  extends RecyclerView.Adapter<ProfesseurAdapter.M
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
 
-        holder.nomProfesseur.setText(professeurs.get(position).getNom());
-        holder.prenomProfesseur.setText(professeurs.get(position).getPrenom());
-        holder.departement.setText(professeurs.get(position).getDepartement());
-        //holder.photo.setImageResource(professeurs.get(position).getImage());
-
+        holder.nomProfesseur.setText("Nom : "+professeurs.get(position).getNom());
+        holder.prenomProfesseur.setText("Prénom : "+professeurs.get(position).getPrenom());
+        holder.departement.setText("Département  : "+professeurs.get(position).getDepartement());
+        holder.idProf.setText(professeurs.get(position).getIdProf());
     }
 
     @Override
@@ -64,6 +65,7 @@ public class ProfesseurAdapter  extends RecyclerView.Adapter<ProfesseurAdapter.M
     public TextView prenomProfesseur;
     public TextView departement;
     public ImageView photo;
+    public TextView idProf;
 
     public MyViewHolder(View itemLayoutView) {
 
@@ -72,6 +74,7 @@ public class ProfesseurAdapter  extends RecyclerView.Adapter<ProfesseurAdapter.M
         nomProfesseur =itemLayoutView.findViewById(R.id.nomprof);
         prenomProfesseur =itemLayoutView.findViewById(R.id.prenomprof);
         departement =itemLayoutView.findViewById(R.id.departementprof);
+        idProf = itemLayoutView.findViewById(R.id.idProf);
         photo= itemLayoutView.findViewById(R.id.photoprof);
 
         itemLayoutView.setOnClickListener(this);
@@ -80,7 +83,7 @@ public class ProfesseurAdapter  extends RecyclerView.Adapter<ProfesseurAdapter.M
     public void onClick(View v) {
         FragmentActivity activity = (FragmentActivity)(context);
         FragmentManager fm = activity.getSupportFragmentManager();
-        DialogProf f= DialogProf.newInstance(nomProfesseur.getText().toString(), prenomProfesseur.getText().toString(), departement.getText().toString());
+        DialogProf f= DialogProf.newInstance(nomProfesseur.getText().toString(), prenomProfesseur.getText().toString(), departement.getText().toString(), idProf.getText().toString());
         f.show(fm, null);
     }
 }

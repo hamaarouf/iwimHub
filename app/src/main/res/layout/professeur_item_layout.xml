@@ -1,26 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
+    android:layout_height="wrap_content">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="20dp"
+        >
 
         <ImageView
             android:id="@+id/photoprof"
-            android:layout_width="124dp"
-            android:layout_height="165dp"
             style="?android:attr/listSeparatorTextViewStyle"
-             />
+            android:layout_width="131dp"
+            android:layout_height="210dp"
+            app:srcCompat="@drawable/teacher" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="213dp"
             android:orientation="vertical">
 
             <TextView
@@ -29,6 +30,7 @@
                 android:layout_height="50dp"
                 android:text="TextView"
                 android:textSize="18sp" />
+
 
             <TextView
                 android:id="@+id/prenomprof"
@@ -43,7 +45,18 @@
                 android:layout_height="40dp"
                 android:text="TextView"
                 android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/idProf"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="TextView"
+                android:textSize="18sp"
+                android:visibility="invisible" />
         </LinearLayout>
 
+
+
     </LinearLayout>
-</LinearLayout>
+
+</RelativeLayout>
