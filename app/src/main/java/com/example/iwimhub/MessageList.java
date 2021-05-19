@@ -12,6 +12,7 @@ import com.example.iwimhub.Models.Message;
 import com.example.iwimhub.Models.Professeur;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -39,7 +40,7 @@ public class MessageList extends AppCompatActivity {
         recyclerViewMsg.setLayoutManager(layoutManager);
         recyclerViewMsg.setAdapter(myAdapter);
 
-        Task<QuerySnapshot> msgRef = db.collection("messgaes").get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+        Task<QuerySnapshot> msgRef = db.collection("messages").whereEqualTo("toId", FirebaseAuth.getInstance().getCurrentUser().getUid()).get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
             @Override
             public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
                 if(!queryDocumentSnapshots.isEmpty()){

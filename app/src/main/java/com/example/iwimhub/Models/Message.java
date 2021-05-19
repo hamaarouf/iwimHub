@@ -6,7 +6,10 @@ public class Message {
     private String fromFullname;
     private String message;
 
-    public Message( String fromFullname, String toId,String message) {
+    public Message() {
+    }
+
+    public Message(String fromFullname, String toId, String message) {
         //this.id = id;
         this.toId = toId;
         this.fromFullname = fromFullname;

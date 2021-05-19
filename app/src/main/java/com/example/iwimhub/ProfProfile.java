@@ -59,7 +59,7 @@ public class ProfProfile extends AppCompatActivity {
         prenom = findViewById(R.id.prenomProfileProf);
         departement = findViewById(R.id.departementProfileProf);
         photoProfile = findViewById(R.id.imageProfileProf);
-        save = findViewById(R.id.msgsend);
+        save = findViewById(R.id.listprof);
 
         save.setOnClickListener(new View.OnClickListener() {
             @Override

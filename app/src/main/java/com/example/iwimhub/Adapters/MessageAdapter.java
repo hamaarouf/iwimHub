@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -29,13 +30,15 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MyViewHo
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemLayoutView =
-                LayoutInflater.from(parent.getContext()).inflate(R.layout.professeur_item_layout, parent, false);
+                LayoutInflater.from(parent.getContext()).inflate(R.layout.message_item, parent, false);
         MessageAdapter.MyViewHolder vh = new MessageAdapter.MyViewHolder(itemLayoutView);
         return vh;
     }
 
     @Override
     public void onBindViewHolder(@NonNull MessageAdapter.MyViewHolder holder, int position) {
+        holder.from.setText("From : "+messages.get(position).getFromFullname());
+        holder.messageBody.setText("Message : "+messages.get(position).getMessage());
 
     }
 
@@ -45,8 +48,16 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MyViewHo
     }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+        public TextView from;
+        public TextView messageBody;
+
         public MyViewHolder(View itemLayoutView) {
+
             super(itemLayoutView);
+            from = itemLayoutView.findViewById(R.id.from);
+            messageBody = itemLayoutView.findViewById(R.id.messageBody);
+
+            itemLayoutView.setOnClickListener(this);
         }
 
         @Override
